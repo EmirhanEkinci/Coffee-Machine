@@ -1,0 +1,499 @@
+										#include <iostream>
+										#include <string>
+										using namespace std;
+										
+										class menu
+										{
+										public:
+										void body ()
+										{
+										cout << "!!!!!!!!!!!!!!! WELCOME TO COFFE SHOP !!!!!!!!!!!!!!!" << endl;
+										cout << "------ Please choose a coffe to drink you want ------" << endl;
+										cout<< "  __________ HOT COFFE MENU____________"<< endl;
+										cout << "-------    1- Hot chocolate  (S/M/L)1KM/1.5KM/2KM     -------" << endl;
+										cout << "-------    2- Espresso       (S/M/L) 1.5KM/2KM/2.5KM  -------" << endl;
+										cout << "-------    3- Cappuccino     (S/M/L) 2.5KM/3KM/3.5KM  -------" << endl;
+										cout << "-------    4- Turkish Coffe  (S/M/L) 4.5KM/5KM/5.5KM  -------"<< endl;
+										cout <<" -------    5- Filter Coffe   (S/M/L) 2 KM/2.5KM/3KM   ------- "<< endl;
+										cout <<" -------    6- Mocha          (S/M/L) 3 KM/3.5KM/4KM   --------"<< endl;
+										}
+										};
+										
+										int main ()
+										{
+										menu t;
+										t.body();
+										int espresso=50;
+										int hotChocolate=50; 
+										int turkishCoffe=50;
+										int cappuccino=50;
+										int filterCoffe=50;
+										int mocha=50;
+										//50 quantity is available for each drink
+										int option;
+										int money=50;
+										char drink;
+										double coin;
+										double change;
+										bool keepGoing= true;
+										double price;
+										string size;
+										system ( "color b");
+										cin>> option;
+										switch( option) {
+										
+										
+										
+										
+										case 1:
+											
+										hotChocolate-- ;
+										
+												   	// When customers choose cold brew, the number of cold brew will decrease.
+										// If there is no hot chcocolate  more than 0, it is not going to work.
+													while (true) {
+					    
+					
+					    cout << "Enter the size (S/M/L): ";
+					    cin >> size;
+					    double price;
+					    // Check if the input size is valid
+					    if (size == "S" || size == "M" || size == "L") {
+					        break; // Exit the loop
+					    } else {
+					        cout << "Error: Invalid size. Please enter a valid size (S/M/L)." << endl;
+					    }
+					}
+									
+								     	
+					                   if (size == "S") {
+					                     price = 1.0; // price is 1.0 KM for size S
+					                   } else if (size == "M") {
+					                    price = 1.5; // price is 1.5 KM for size M
+					                   } else if (size == "L") {
+					                    price = 2.0; // price is 2.0 KM for size L
+					                }
+					
+									while (keepGoing) {
+					    
+					
+					    
+					
+					    // Check if the input size is valid
+					    if (size != "S" && size != "M" && size != "L") {
+					        cout << "Error: Invalid size. Please enter a valid size (S/M/L)." << endl;
+					        keepGoing = true; // Continue the loop
+					    } else {
+					        keepGoing = false; // Update control variable to stop the loop
+					    }
+					}
+					
+									if(hotChocolate>0){
+					                cout<<"Insert coin: ";
+					                cin>>coin;
+					                if (cin.fail()){
+					                cout<< "please try again we can only accept KM"<< endl;
+									}
+									
+									
+								   
+					                if(coin>=price){
+					                
+					                
+					                
+					                cout<<"HotChocolate will be served as soon as possible ..."<<endl;
+					                if(coin>price){
+					                // If user insert more money than required , the machine will calculate change, decrease markCount and add money to toal money
+					                change=(coin-price);
+					                 
+					                 money+=price;
+					                 cout<<"Change: "<<change<<" KM";
+					           }
+					              } else if (coin < price) {
+					               cout << "Please try again. Insufficient funds!." << endl;                                   
+					    } 
+					    break;
+					} else {
+					    cout<<"HotChocolate does not exist , Something else?";
+					    cin>>drink;
+					}
+																		    
+															    
+															    
+															    
+															    case 2:
+															    	espresso--;
+												   	// When customers choose cold brew, the number of cold brew will decrease.
+										// If there is no espresso more than 0, it is not going to work.
+													while (true) {
+					    
+					
+					    cout << "Enter the size (S/M/L): ";
+					    cin >> size;
+					    double price;
+					    // Check if the input size is valid
+					    if (size == "S" || size == "M" || size == "L") {
+					        break; // Exit the loop
+					    } else {
+					        cout << "Error: Invalid size. Please enter a valid size (S/M/L)." << endl;
+					    }
+					}
+									
+								     	
+					                   if (size == "S") {
+					                     price = 1.5; // price is 1.5 KM for size S
+					                   } else if (size == "M") {
+					                    price = 2.0; // price is 2.0 KM for size M
+					                   } else if (size == "L") {
+					                    price = 2.5; // price is 2.5 KM for size L
+					                }
+					
+									while (keepGoing) {
+					 
+					    
+					
+					    // Check if the input size is valid
+					    if (size != "S" && size != "M" && size != "L") {
+					        cout << "Error: Invalid size. Please enter a valid size (S/M/L)." << endl;
+					        keepGoing = true; // Continue the loop
+					    } else {
+					        keepGoing = false; // Update control variable to stop the loop
+					    }
+					}
+					
+									if(espresso>0){
+					                cout<<"Insert coin: ";
+					                cin>>coin;
+					                if (cin.fail()){
+					                cout<< "please try again we can only accept KM"<< endl;
+									}
+									
+									
+								   
+					                if(coin>=price){
+					                
+					              
+					             
+					                cout<<"Espresso will be served as soon as possible ..."<<endl;
+					                if(coin>price){
+					                // If user insert more money than required , the machine will calculate change, decrease markCount and add money to toal money
+					                change=(coin-price);
+					                
+					                 money+=price;
+					                 cout<<"Change: "<<change<<" KM";
+					           }
+					              } else if (coin < price) {
+					               cout << "Please try again. Insufficient funds!." << endl;                                   
+					    } 
+					    break;
+					} else {
+					    cout<<"Espresso does not exist , Something else?";
+					    cin>>drink;
+					}
+														
+														
+														case 3: 
+														
+																			    	cappuccino--;
+												    	// When customers choose cold brew, the number of cold brew will decrease.
+										// If there is no cold cappuccino more than 0, it is not going to work.
+													while (true) {
+					    
+					
+					    cout << "Enter the size (S/M/L): ";
+					    cin >> size;
+					    double price;
+					    // Check if the input size is valid
+					    if (size == "S" || size == "M" || size == "L") {
+					        break; // Exit the loop
+					    } else {
+					        cout << "Error: Invalid size. Please enter a valid size (S/M/L)." << endl;
+					    }
+					}
+									
+								     	
+					                   if (size == "S") {
+					                     price = 2.5; // price is 2.5 KM for size S
+					                   } else if (size == "M") {
+					                    price = 3.0; // price is 3.0 KM for size M
+					                   } else if (size == "L") {
+					                    price = 3.5; // price is 3.5 KM for size L
+					                }
+					
+									while (keepGoing) {
+					  
+					
+					    
+					
+					    // Check if the input size is valid
+					    if (size != "S" && size != "M" && size != "L") {
+					        cout << "Error: Invalid size. Please enter a valid size (S/M/L)." << endl;
+					        keepGoing = true; // Continue the loop
+					    } else {
+					        keepGoing = false; // Update control variable to stop the loop
+					    }
+					}
+					
+									if(cappuccino>0){
+					                cout<<"Insert coin: ";
+					                cin>>coin;
+					                if (cin.fail()){
+					                cout<< "please try again we can only accept KM"<< endl;
+									}
+									
+									
+								   
+					                if(coin>=price){
+					               
+					                
+					                
+					                cout<<"Cappuccino will be served as soon as possible ..."<<endl;
+					                if(coin>price){
+					                // If user insert more money than required , the machine will calculate change, decrease markCount and add money to toal money
+					                change=(coin-price);
+					                 
+					                 money+=price;
+					                 cout<<"Change: "<<change<<" KM";
+					           }
+					              } else if (coin < price) {
+					               cout << "Please try again. Insufficient funds!." << endl;                                   
+					    } 
+					    break;
+					} else {
+					    cout<<"Cappuccino does not exist , Something else?";
+					    cin>>drink;
+					}
+												
+														
+														
+														
+														
+														
+														case 4:
+																						    	turkishCoffe--;
+												   
+										// When customers choose cold brew, the number of cold brew will decrease.
+										// If there is no turkish coffe more than 0, it is not going to work.
+													while (true) {
+					    
+					
+					    cout << "Enter the size (S/M/L): ";
+					    cin >> size;
+					    double price;
+					    // Check if the input size is valid
+					    if (size == "S" || size == "M" || size == "L") {
+					        break; // Exit the loop
+					    } else {
+					        cout << "Error: Invalid size. Please enter a valid size (S/M/L)." << endl;
+					    }
+					}
+									
+								     	
+					                   if (size == "S") {
+					                     price = 4.5; // price is 4.5 KM for size S
+					                   } else if (size == "M") {
+					                    price = 5.0; // price is 5.0 KM for size M
+					                   } else if (size == "L") {
+					                    price = 5.5; // price is 5.5 KM for size L
+					                }
+					
+									while (keepGoing) {
+					   
+					
+					    
+					
+					    // Check if the input size is valid
+					    if (size != "S" && size != "M" && size != "L") {
+					        cout << "Error: Invalid size. Please enter a valid size (S/M/L)." << endl;
+					        keepGoing = true; // Continue the loop
+					    } else {
+					        keepGoing = false; // Update control variable to stop the loop
+					    }
+					}
+					
+									if(turkishCoffe>0){
+					                cout<<"Insert coin: ";
+					                cin>>coin;
+					                if (cin.fail()){
+					                cout<< "please try again we can only accept KM"<< endl;
+									}
+									
+									
+								   
+					                if(coin>=price){
+					              
+					               
+					               
+					                cout<<"TurkishCoffe will be served as soon as possible ..."<<endl;
+					                if(coin>price){
+					                // If user insert more money than required , the machine will calculate change, decrease markCount and add money to toal money
+					                change=(coin-price);
+					              
+					                 money+=price;
+					                 cout<<"Change: "<<change<<" KM";
+					           }
+					              } else if (coin < price) {
+					               cout << "Please try again. Insufficient funds!." << endl;                                   
+					    } 
+					    break;
+					} else {
+					    cout<<"TurkishCoffe does not exist , Something else?";
+					    cin>>drink;
+					}
+											
+														
+														
+														
+														
+													
+														
+														case 5 :
+														filterCoffe-- ;
+																	    								    	
+												   
+											// When customers choose cold brew, the number of cold brew will decrease.
+										// If there is no filter coffe more than 0, it is not going to work.
+													while (true) {
+					    
+					
+					    cout << "Enter the size (S/M/L): ";
+					    cin >> size;
+					    double price;
+					    // Check if the input size is valid
+					    if (size == "S" || size == "M" || size == "L") {
+					        break; // Exit the loop
+					    } else {
+					        cout << "Error: Invalid size. Please enter a valid size (S/M/L)." << endl;
+					    }
+					}
+									
+								     	
+					                   if (size == "S") {
+					                     price = 2.0; // price is 2.0 KM for size S
+					                   } else if (size == "M") {
+					                    price = 2.5; // price is 2.5 KM for size M
+					                   } else if (size == "L") {
+					                    price = 3.0; // price is 3.0 KM for size L
+					                }
+					
+									while (keepGoing) {
+					   
+					    
+					
+					    // Check if the input size is valid
+					    if (size != "S" && size != "M" && size != "L") {
+					        cout << "Error: Invalid size. Please enter a valid size (S/M/L)." << endl;
+					        keepGoing = true; // Continue the loop
+					    } else {
+					        keepGoing = false; // Update control variable to stop the loop
+					    }
+					}
+					
+									if(filterCoffe>0){
+					                cout<<"Insert coin: ";
+					                cin>>coin;
+					                if (cin.fail()){
+					                cout<< "please try again we can only accept KM"<< endl;
+									}
+									
+									
+								   
+					                if(coin>=price){
+					                
+					                
+					                
+					                cout<<"FilterCoffe will be served as soon as possible ..."<<endl;
+					                if(coin>price){
+					                // If user insert more money than required , the machine will calculate change, decrease markCount and add money to toal money
+					                change=(coin-price);
+					                 
+					                 money+=price;
+					                 cout<<"Change: "<<change<<" KM";
+					           }
+					              } else if (coin < price) {
+					               cout << "Please try again. Insufficient funds!." << endl;                                   
+					    } 
+					    break;
+					} else {
+					    cout<<"FilterCoffe does not exist , Something else?";
+					    cin>>drink;
+					}
+											
+															    
+															    
+															case 6:
+														mocha-- ;
+																	    								    	
+												  
+										// When customers choose cold brew, the number of cold brew will decrease.
+										// If there is no mocha more than 0, it is not going to work.
+													while (true) {
+					    
+					    cout << "Enter the size (S/M/L): ";
+					    cin >> size;
+					    double price;
+					    // Check if the input size is valid
+					    if (size == "S" || size == "M" || size == "L") {
+					        break; // Exit the loop
+					    } else {
+					        cout << "Error: Invalid size. Please enter a valid size (S/M/L)." << endl;
+					    }
+					}
+									
+								     	
+					                   if (size == "S") {
+					                     price = 3.0; // price is 3.0 KM for size S
+					                   } else if (size == "M") {
+					                    price = 3.5; // price is 3.5 KM for size M
+					                   } else if (size == "L") {
+					                    price = 4.0; // price is 4.0 KM for size L
+					                }
+					
+									while (keepGoing) {
+					   
+					
+					    
+					
+					    // Check if the input size is valid
+					    if (size != "S" && size != "M" && size != "L") {
+					        cout << "Error: Invalid size. Please enter a valid size (S/M/L)." << endl;
+					        keepGoing = true; // Continue the loop
+					    } else {
+					        keepGoing = false; // Update control variable to stop the loop
+					    }
+					}
+					
+									if(mocha>0){
+					                cout<<"Insert coin: ";
+					                cin>>coin;
+					                if (cin.fail()){
+					                cout<< "please try again we can only accept KM"<< endl;
+									}
+									
+									
+								   
+					                if(coin>=price){
+					                
+					                
+					                
+					                cout<<"Mocha will be served as soon as possible ..."<<endl;
+					                if(coin>price){
+					                // If user insert more money than required , the machine will calculate change, decrease markCount and add money to toal money
+					                change=(coin-price);
+					                 
+					                 money+=price;
+					                 cout<<"Change: "<<change<<" KM";
+					           }
+					              } else if (coin < price) {
+					               cout << "Please try again. Insufficient funds!." << endl;                                   
+					    } 
+					    break;
+					} else {
+					    cout<<"Mocha does not exist , Something else?";
+					    cin>>drink;
+					}
+											
+										
+															}
+													}
+														 
